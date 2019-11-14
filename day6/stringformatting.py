@@ -20,11 +20,11 @@ import datetime
 default_names = ["Justin", "john", "Emilee", "Jim", "Ron", "Sandra", "veronica", "Whitney"]
 default_amounts = [123.32, 94.23, 124.32, 323.4, 23, 322.122323, 32.4, 99.99]
 
-unf_message = """Hi {name}! 
+unf_message = """Hi {name} ,
 Thank you for the purchase on {date}. 
 We hope you are exicted about using it. Just as a
 reminder the purcase total was ${total}.
-Have a great one!
+Have a great one!\n
 Team CFE
 """
 
@@ -37,11 +37,8 @@ def make_messages(names, amounts):
         text = '{today.month}/{today.day}/{today.year}'.format(today=today)
         for name in names:
             new_amount = "%.2f" %(amounts[i])
-            new_msg = unf_message.format(
-                    name=name,
-                    date=text,
-                    total=new_amount
-                )
+            new_name = name[0].upper() + name[1:]
+            new_msg = unf_message.format(name=new_name,date=text,total=new_amount)
             i += 1
             print(new_msg)
 
