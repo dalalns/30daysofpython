@@ -35,5 +35,5 @@ print('function noise',object.make_noice)
 def some_func(arg1,arg2,keyarg=None,keyarg2=None):
 	print(arg1,arg2)
 
-some_func("navin","prince")	
+some_func("navin","prince")
 
